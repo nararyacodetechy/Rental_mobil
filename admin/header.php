@@ -141,11 +141,11 @@
         </form>
 
         <div class="text-end">
-            <a href="autentikasi.php">
+            <a href="signup/login.php">
                 <button type="button" style="border: 1px solid black;" class="btn btn-light text-dark me-2">Login</button>
             </a>
-            <a href="autentikasi.php">
-                <button type="button" class="btn btn-warning">Sign-up</button>
+            <a href="signup/register.php">
+                <button type="button" class="btn btn-primary">Sign-up</button>
             </a>
         </div>
       </div>
