@@ -1,5 +1,16 @@
 <?php require "header.php"; ?>
 
+<!-- Menampilkan Data (SELECT.PHP) -->
+<?php require "functions.php"; 
+
+$costumer = query($conn, "SELECT * FROM tb_costumer"); 
+
+if(isset($_POST)) {
+
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,24 +34,29 @@
         </a>
         <table class="table table-dark table-striped table-hover table-bordered">
           <tr>
-            <th>NO</th>
-            <th>Nama Costumer</th>
+            <th>No.</th>
+            <th>Nmaa Costumer</th>
             <th>Alamat Costumer</th>
             <th>Nomer Telepon</th>
             <th>Jenis Kelamin</th>
             <th>Atur</th>
           </tr>
+
+          <?php $id = 1; ?>
+          <?php foreach ($costumer as $row) : ?>
           <tr>
-            <td>1.</td>
-            <td>Bagus Nararya</td>
-            <td>Gianyar</td>
-            <td>087347273423</td>
-            <td>Pria</td>
+            <td><?= $row["id_costumer"];?></td>
+            <td><?= $row["nama_costumer"];?></td>
+            <td><?= $row["alamat_costumer"];?></td>
+            <td><?= $row["nomer_telepon"];?></td>
+            <td><?= $row["jenis_kelamin"];?></td>
             <td class="text-center">
               <a href="crud/edit.php" class="btn btn-warning">EDIT</a>
               <a href="home.php" class="btn btn-danger">DELETE</a>
             </td>
           </tr>
+          <?php $id++ ?>
+          <?php endforeach; ?>
         </table>
       </div>
       <div class="card-footer bg-dark"></div>

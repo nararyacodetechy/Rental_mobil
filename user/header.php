@@ -6,7 +6,7 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.98.0">
-    <title>Halaman Admin | Rental Mobil</title>
+    <title>Rencars | Rental Mobil</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/headers/">
     <link href="/docs/5.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
@@ -113,21 +113,9 @@
 
           <ul class="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small">
             <li>
-              <a href="data-costumer.php" class="nav-link text-secondary text-white">
+              <a href="index.php" class="nav-link text-secondary text-white">
               <!-- <svg class="bi d-block mx-auto mb-1 text-white" width="24" height="24"><use xlink:href="#home"/></svg> -->
-              Data Costumer
-              </a>
-            </li>
-            <li>
-              <a href="data-mobil.php" class="nav-link text-white">
-                <!-- <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#table"/></svg> -->
-                Data Mobil
-              </a>
-            </li>
-            <li>
-              <a href="data-transaksi.php" class="nav-link text-white">
-                <!-- <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#people-circle"/></svg> -->
-                Data Transaksi
+              Home
               </a>
             </li>
           </ul>
