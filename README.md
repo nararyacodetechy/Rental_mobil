@@ -1,5 +1,4 @@
 # Rental_mobil
-Website Rental Mobil
 Nama Anggota Kelompok :
 1.	Bagus Nararya Nanda Raditya	 42030064
 2.	Kavita Kharisna Murthy 42030060		
