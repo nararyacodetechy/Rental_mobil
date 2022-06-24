@@ -1,20 +1,20 @@
 <?php 
-require "functions.php";
+require "../functions.php";
 
 if (isset($_POST["submit"])) {
 
-    if (tambah($_POST) > 0) {
+    if (tambahCostumer($_POST) > 0) {
         echo "
             <script>
                 alert('Data Berhasil Ditambahkan!');
-                document.location.href = 'tambah.php';
+                document.location.href = 'data-costumer.php';
             </script>
         ";
     } else {
         echo "
             <script>
                 alert('Data Gagal Ditambahkan!');
-                document.location.href = 'tambah.php';
+                document.location.href = 'data-costumer.php';
             </script>
         ";
     }
@@ -44,19 +44,19 @@ if (isset($_POST["submit"])) {
         <div class="card-body">
           <div class="mb-3 text-left">
             <label for="nama-costumer" class="form-label ">Nama Costumer</label>
-            <input type="text" name="nama-costumer" class="form-control" id="nama-costumer" placeholder="Masukan Nama Anda">
+            <input type="text" name="nama-costumer" class="form-control" id="nama-costumer" placeholder="Masukan Nama Anda" required>
           </div>
           <div class="mb-3">
             <label for="alamat-costumer" class="form-label">Alamat Costumer</label>
-            <input type="text" name="alamat-costumer" class="form-control" id="alamat-costumer" placeholder="Masukan Alamat Costumer">
+            <input type="text" name="alamat-costumer" class="form-control" id="alamat-costumer" placeholder="Masukan Alamat Costumer" required>
           </div>
           <div class="mb-3">
             <label for="nomer-telepon" class="form-label">Nomer Telepon</label>
-            <input type="text" name="nomer-telepon" class="form-control" id="nomer-telepon" placeholder="Masukan Nomer Telepon">
+            <input type="text" name="nomer-telepon" class="form-control" id="nomer-telepon" placeholder="Masukan Nomer Telepon" required>
           </div>
           <div class="mb-3 text-left">
             <label for="jenis-kelamin" class="form-label ">Jenis Kelamin</label>
-            <select class="form-select" name="jenis-kelamin" aria-label="Default select example" id="jenis-kelamin">
+            <select class="form-select" name="jenis-kelamin" aria-label="Default select example" id="jenis-kelamin" required>
               <option selected>Pilih Jenis Kelamin</option>
               <option value="1">Pria</option>
               <option value="2">Wanita</option>
@@ -67,10 +67,10 @@ if (isset($_POST["submit"])) {
 
         <!-- button add & delete -->
         <div class="text-center mb-4">
-          <a href="index.php">
+          <a href="data-costumer.php">
             <button type="submit" name="submit" class="btn btn-success">Save</button>
           </a>
-          <a href="index.php">
+          <a href="data-costumer.php">
             <button type="button" class="btn btn-danger">Batal</button>
           </a>
         </div>

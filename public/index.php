@@ -1,7 +1,7 @@
 <?php require "header.php"; ?>
 
 <!-- Menampilkan Data (SELECT.PHP) -->
-<?php require "functions.php"; 
+<?php require "../admin/functions.php"; 
 
 $merekMobil = query($conn, "SELECT * FROM tb_mobil"); 
 

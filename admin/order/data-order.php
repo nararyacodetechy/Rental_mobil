@@ -1,9 +1,9 @@
-<?php require "header.php"; ?>
+<?php require "../header.php"; ?>
 
 <!-- Menampilkan Data (SELECT.PHP) -->
-<?php require "functions.php"; 
+<?php require "../functions.php"; 
 
-$costumer = query($conn, "SELECT * FROM tb_costumer"); 
+$costumer = query($conn, "SELECT * FROM tb_transaksi"); 
 
 if(isset($_POST)) {
 
@@ -29,30 +29,37 @@ if(isset($_POST)) {
         Form Data Rental Mobil
       </div>
       <div class="card-body">
-        <a href="crud/tambah.php">
+        <a href="tambah-order.php">
           <button type="button" class="btn btn-success mb-4">Tambahkan Data</button>
         </a>
         <table class="table table-dark table-striped table-hover table-bordered">
           <tr>
             <th>No.</th>
             <th>Nama Costumer</th>
-            <th>Alamat Costumer</th>
-            <th>Nomer Telepon</th>
-            <th>Jenis Kelamin</th>
+            <th>Merek Mobil</th>
+            <th>Awal Sewa</th>
+            <th>Jangka Waktu Sewa</th>
+            <th>Harga Sewa</th>
+            <th>Total Bayar</th>
+            <th>Status Bayar</th>
             <th style="width: 160px;">Aksi</th>
           </tr>
 
           <?php $id = 1; ?>
           <?php foreach ($costumer as $row) : ?>
           <tr>
-            <td><?= $row["id_costumer"];?></td>
+            <td><?= $id?></td>
             <td><?= $row["nama_costumer"];?></td>
-            <td><?= $row["alamat_costumer"];?></td>
-            <td><?= $row["nomer_telepon"];?></td>
-            <td><?= $row["jenis_kelamin"];?></td>
+            <td><?= $row["merek_mobil"];?></td>
+            <td><?= $row["tanggal_awal_sewa"];?></td>
+            <td><?= $row["jangka_waktu_sewa"];?></td>
+            <td><?= $row["harga_sewa_perhari"];?></td>
+            <td><?= $row["total_bayar"];?></td>
+            <td><?= $row["status_sewa"];?></td>
+
             <td class="text-center">
               <a href="crud/edit.php" class="btn btn-warning">EDIT</a>
-              <a href="home.php" class="btn btn-danger">DELETE</a>
+              <a href="hapus-order.php?id=<?= $row["id_sewa"]; ?>" class="btn btn-danger">DELETE</a>
             </td>
           </tr>
           <?php $id++ ?>

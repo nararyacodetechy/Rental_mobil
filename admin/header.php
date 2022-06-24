@@ -108,25 +108,25 @@
       <div class="px-3 py-2 bg-dark text-white">
         <div class="container">
           <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-            <a href="/" class="d-flex align-items-center my-2 my-lg-0 me-lg-auto text-white text-decoration-none">
+            <a href="#" class="d-flex align-items-center my-2 my-lg-0 me-lg-auto text-white text-decoration-none">
               <h3>Rencars</h3></svg>
             </a>
 
             <ul class="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small">
               <li>
-                <a href="data-costumer.php" class="nav-link text-secondary text-white">
+                <a href="../costumer/data-costumer.php" class="nav-link text-secondary text-white">
                   <!-- <svg class="bi d-block mx-auto mb-1 text-white" width="24" height="24"><use xlink:href="#home"/></svg> -->
                   Data Costumer
                 </a>
               </li>
               <li>
-                <a href="data-mobil.php" class="nav-link text-white">
+                <a href="../mobil/data-mobil.php" class="nav-link text-white">
                   <!-- <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#table"/></svg> -->
                   Data Mobil
                 </a>
               </li>
               <li>
-                <a href="data-order.php" class="nav-link text-white">
+                <a href="../order/data-order.php" class="nav-link text-white">
                   <!-- <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#people-circle"/></svg> -->
                   Data Order
                 </a>
