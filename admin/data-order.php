@@ -3,7 +3,7 @@
 <!-- Menampilkan Data (SELECT.PHP) -->
 <?php require "functions.php"; 
 
-$costumer = query($conn, "SELECT * FROM tb_mobil"); 
+$costumer = query($conn, "SELECT * FROM tb_transaksi"); 
 
 if(isset($_POST)) {
 
@@ -35,29 +35,27 @@ if(isset($_POST)) {
         <table class="table table-dark table-striped table-hover table-bordered">
           <tr>
             <th>No.</th>
-            <th>Gambar</th>
+            <th>Nama Costumer</th>
             <th>Merek Mobil</th>
+            <th>Awal Sewa</th>
+            <th>Jangka Waktu Sewa</th>
             <th>Harga Sewa</th>
-            <th>Harga Sewa Nilai</th>
-            <th>Tersedia</th>
-            <th>BBM</th>
-            <th>Jumblah Penumpang</th>
-            <th>Plat Mobil</th>
+            <th>Total Bayar</th>
+            <th>Status Bayar</th>
             <th style="width: 160px;">Aksi</th>
           </tr>
 
           <?php $id = 1; ?>
           <?php foreach ($costumer as $row) : ?>
           <tr>
-            <td><?= $row["id_mobil"];?></td>
-            <td><?= $row["gambar_mobil"];?></td>
+            <td><?= $row["id_sewa"];?></td>
+            <td><?= $row["nama_costumer"];?></td>
             <td><?= $row["merek_mobil"];?></td>
-            <td><?= $row["harga_sewa_nama"];?></td>
-            <td><?= $row["harga_sewa_angka"];?></td>
-            <td><?= $row["mobil_sopir"];?></td>
-            <td><?= $row["bbm"];?></td>
-            <td><?= $row["jumblah_penumpang"];?></td>
-            <td><?= $row["plat_mobil"];?></td>
+            <td><?= $row["tanggal_awal_sewa"];?></td>
+            <td><?= $row["jangka_waktu_sewa"];?></td>
+            <td><?= $row["harga_sewa_perhari"];?></td>
+            <td><?= $row["total_bayar"];?></td>
+            <td><?= $row["status_sewa"];?></td>
 
             <td class="text-center">
               <a href="crud/edit.php" class="btn btn-warning">EDIT</a>

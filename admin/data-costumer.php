@@ -35,11 +35,11 @@ if(isset($_POST)) {
         <table class="table table-dark table-striped table-hover table-bordered">
           <tr>
             <th>No.</th>
-            <th>Nmaa Costumer</th>
+            <th>Nama Costumer</th>
             <th>Alamat Costumer</th>
             <th>Nomer Telepon</th>
             <th>Jenis Kelamin</th>
-            <th>Atur</th>
+            <th style="width: 160px;">Aksi</th>
           </tr>
 
           <?php $id = 1; ?>
