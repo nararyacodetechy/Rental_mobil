@@ -3,7 +3,7 @@ require "../functions.php";
 
 if (isset($_POST["submit"])) {
 
-    if (tambahCostumer($_POST) > 0) {
+    if (tambahOrder($_POST) > 0) {
         echo "
             <script>
                 alert('Data Berhasil Ditambahkan!');
@@ -67,7 +67,7 @@ if (isset($_POST["submit"])) {
             <input type="text" name="total-bayar" class="form-control" id="total-bayar" placeholder="Masukan Jumblah total bayar" required>
           </div>
           <div class="mb-3 text-left">
-            <label for="jenis-kelamin" class="form-label ">Jenis Kelamin</label>
+            <label for="status-bayar" class="form-label ">Status Bayar</label>
             <select class="form-select" name="status-bayar" aria-label="Default select example" id="status-bayar" required>
               <option selected>Pilih Status Bayar</option>
               <option value="1">belum bayar</option>

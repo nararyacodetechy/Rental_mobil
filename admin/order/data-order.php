@@ -26,7 +26,7 @@ if(isset($_POST)) {
     <!-- form data barang  -->
     <div class="card mt-4 mb-4">
       <div class="card-header bg-dark text-white text-center">
-        Form Data Rental Mobil
+        Data Order | Transaksi
       </div>
       <div class="card-body">
         <a href="tambah-order.php">
@@ -52,13 +52,13 @@ if(isset($_POST)) {
             <td><?= $row["nama_costumer"];?></td>
             <td><?= $row["merek_mobil"];?></td>
             <td><?= $row["tanggal_awal_sewa"];?></td>
-            <td><?= $row["jangka_waktu_sewa"];?></td>
+            <td width="120px"><?= $row["jangka_waktu_sewa"];?></td>
             <td><?= $row["harga_sewa_perhari"];?></td>
             <td><?= $row["total_bayar"];?></td>
             <td><?= $row["status_sewa"];?></td>
 
             <td class="text-center">
-              <a href="crud/edit.php" class="btn btn-warning">EDIT</a>
+              <a href="edit-order.php?id=<?= $row["id_sewa"]; ?>" class="btn btn-warning">EDIT</a>
               <a href="hapus-order.php?id=<?= $row["id_sewa"]; ?>" class="btn btn-danger">DELETE</a>
             </td>
           </tr>

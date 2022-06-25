@@ -26,7 +26,7 @@ if(isset($_POST)) {
     <!-- form data barang  -->
     <div class="card mt-4 mb-4">
       <div class="card-header bg-dark text-white text-center">
-        Form Data Rental Mobil
+        Data Rental Mobil
       </div>
       <div class="card-body">
         <a href="tambah-mobil.php">
@@ -50,17 +50,19 @@ if(isset($_POST)) {
           <?php foreach ($costumer as $row) : ?>
           <tr>
             <td><?= $id ?></td>
-            <td><?= $row["gambar_mobil"];?></td>
+            <td>
+              <img src="../../mobil/<?= $row["gambar_mobil"];?>" alt="" width="80px" height="60px">
+            </td>
             <td><?= $row["merek_mobil"];?></td>
             <td><?= $row["harga_sewa_nama"];?></td>
             <td><?= $row["harga_sewa_angka"];?></td>
             <td><?= $row["mobil_sopir"];?></td>
             <td><?= $row["bbm"];?></td>
-            <td><?= $row["jumblah_penumpang"];?></td>
+            <td width="100px"><?= $row["jumblah_penumpang"];?></td>
             <td><?= $row["plat_mobil"];?></td>
 
             <td class="text-center">
-              <a href="edit-mobil.php" class="btn btn-warning">EDIT</a>
+              <a href="edit-mobil.php?id=<?= $row["id_mobil"]; ?>" class="btn btn-warning">EDIT</a>
               <a href="hapus-mobil.php?id=<?= $row["id_mobil"]; ?>" class="btn btn-danger">DELETE</a>
             </td>
           </tr>

@@ -1,34 +1,45 @@
-<?php 
+<?php
 require "../admin/functions.php"; ?>
 
 <?php if (isset($_POST["submit"])) {
-    if (tambahCostumer($_POST) > 0) {
-        echo "<div class='alert alert-success' role='alert'>Informasi Costumer Tersimpan !</div>";
-    }  
-    else {
-      echo "<div class='alert alert-danger' role='alert'>Informasi Costumer Tersimpan !</div>";
-    }  
+  if (tambahCostumer($_POST) > 0) {
+    echo "
+              <script>
+                  alert('Data Berhasil Ditambahkan!');
+                  document.location.href = 'index.php';
+              </script>
+          ";
+  } else {
+    echo "
+              <script>
+                  alert('Data Gagal Ditambahkan!');
+                  document.location.href = 'index.php';
+              </script>
+          ";
+  }
 }
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tambahkan Data</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tambahkan Data</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
 
 </head>
+
 <body>
-    
-<div class="container">
+
+  <div class="container">
     <!-- form tambah data  -->
     <form action="" method="post" enctype="multipart/form-data">
       <div class="card mt-4">
         <div class="card-header text-center bg-dark text-white">
-        Masukan Informasi Anda
+          Masukan Informasi Anda
         </div>
         <div class="card-body">
           <div class="mb-3 text-left">
@@ -66,10 +77,10 @@ require "../admin/functions.php"; ?>
       </div>
     </form>
     <!-- form tambah data  -->
-</div>
+  </div>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
 
 </body>
-</html>
 
+</html>
