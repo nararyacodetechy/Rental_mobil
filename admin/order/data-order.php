@@ -9,6 +9,10 @@ if(isset($_POST)) {
 
 }
 
+if(isset($_POST["cari"])) {
+  $costumer = cariOrder($_POST["keyword"]);
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -59,7 +63,11 @@ if(isset($_POST)) {
 
             <td class="text-center">
               <a href="edit-order.php?id=<?= $row["id_sewa"]; ?>" class="btn btn-warning">EDIT</a>
-              <a href="hapus-order.php?id=<?= $row["id_sewa"]; ?>" class="btn btn-danger">DELETE</a>
+              <a>
+                <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                DELETE
+                </button>
+              </a>
             </td>
           </tr>
           <?php $id++ ?>
@@ -69,9 +77,27 @@ if(isset($_POST)) {
       <div class="card-footer bg-dark"></div>
     </div>
     <!-- form data barang  -->
-
   </div>
   <!-- awal-container  -->
-
+  <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="staticBackdropLabel">Hapus Data Costumer</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          Ingin Menghapus Data ini ?
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
+          <a href="hapus-order.php?id=<?= $row["id_sewa"]; ?>">
+            <button type="submit" class="btn btn-danger">Hapus</button>
+          </a>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
 </body>
 </html>

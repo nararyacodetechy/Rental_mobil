@@ -9,6 +9,10 @@ if(isset($_POST)) {
 
 }
 
+if(isset($_POST["cari"])) {
+  $costumer = cariCostumer($_POST["keyword"]);
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -45,14 +49,18 @@ if(isset($_POST)) {
           <?php $id = 1; ?>
           <?php foreach ($costumer as $row) : ?>
           <tr>
-            <td><?= $id?></td>
+            <td><?= $id ?></td>
             <td><?= $row["nama_costumer"];?></td>
             <td><?= $row["alamat_costumer"];?></td>
             <td><?= $row["nomer_telepon"];?></td>
             <td><?= $row["jenis_kelamin"];?></td>
             <td class="text-center">
-              <a href="edit-costumer.php?id=<?= $row["id_costumer"];?>" class="btn btn-warning">EDIT</a>
-              <a href="hapus-costumer.php?id=<?= $row["id_costumer"];?>" class="btn btn-danger">DELETE</a>
+              <a href="edit-costumer.php?id=<?= $row["id_costumer"];?>" class="btn btn-warning">Edit</a>
+              <a>
+                <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                Delete
+                </button>
+              </a>
             </td>
           </tr>
           <?php $id++ ?>
@@ -62,9 +70,26 @@ if(isset($_POST)) {
       <div class="card-footer bg-dark"></div>
     </div>
     <!-- form data barang  -->
-
   </div>
   <!-- awal-container  -->
-
+  <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="staticBackdropLabel">Hapus Data Costumer</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          Ingin Menghapus Data ini ?
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
+          <a href="hapus-costumer.php?id=<?= $row["id_costumer"];?>">
+            <button type="submit" class="btn btn-danger">Hapus</button>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
 </body>
 </html>

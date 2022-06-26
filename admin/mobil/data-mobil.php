@@ -9,6 +9,10 @@ if(isset($_POST)) {
 
 }
 
+if(isset($_POST["cari"])) {
+  $costumer = cariMobil($_POST["keyword"]);
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -62,8 +66,12 @@ if(isset($_POST)) {
             <td><?= $row["plat_mobil"];?></td>
 
             <td class="text-center">
-              <a href="edit-mobil.php?id=<?= $row["id_mobil"]; ?>" class="btn btn-warning">EDIT</a>
-              <a href="hapus-mobil.php?id=<?= $row["id_mobil"]; ?>" class="btn btn-danger">DELETE</a>
+              <a href="edit-mobil.php?id=<?= $row["id_mobil"]; ?>" class="btn btn-warning">Edit</a>
+              <a>
+                <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                Delete
+                </button>
+              </a>
             </td>
           </tr>
           <?php $id++ ?>
@@ -76,6 +84,25 @@ if(isset($_POST)) {
 
   </div>
   <!-- awal-container  -->
-
+<!-- awal-container  -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="staticBackdropLabel">Hapus Data Costumer</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          Ingin Menghapus Data ini ?
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
+          <a href="hapus-mobil.php?id=<?= $row["id_mobil"]; ?>">
+            <button type="submit" class="btn btn-danger">Hapus</button>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
 </body>
 </html>

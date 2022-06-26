@@ -5,15 +5,13 @@ require "../admin/functions.php"; ?>
   if (tambahCostumer($_POST) > 0) {
     echo "
               <script>
-                  alert('Data Berhasil Ditambahkan!');
-                  document.location.href = 'index.php';
+                  document.location.href = 'lanjut.php';
               </script>
           ";
   } else {
     echo "
               <script>
-                  alert('Data Gagal Ditambahkan!');
-                  document.location.href = 'index.php';
+                  document.location.href = 'lanjut.php';
               </script>
           ";
   }
@@ -67,8 +65,8 @@ require "../admin/functions.php"; ?>
 
         <!-- button add & delete -->
         <div class="text-center mb-4">
-          <a href="index.php">
-            <button type="submit" name="submit" class="btn btn-success">Save</button>
+          <a href="lanjut.php">
+            <button type="submit" name="submit" class="btn btn-success">Lanjut</button>
           </a>
           <a href="index.php">
             <button type="button" class="btn btn-danger">Batal</button>

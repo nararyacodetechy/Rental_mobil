@@ -137,12 +137,13 @@
       </div>
       <div class="px-3 py-2 border-bottom mb-3">
         <div class="container d-flex flex-wrap justify-content-center">
-          <form class="col-12 col-lg-auto mb-2 mb-lg-0 me-lg-auto" role="search">
-            <input type="search" class="form-control" placeholder="Search..." aria-label="Search">
+          <form class="col-12 col-lg-auto mb-2 mb-lg-0 me-lg-auto d-flex" role="search" action="" method="post">
+            <input type="search" name="keyword" class="form-control" placeholder="Search..." aria-label="Search">
+            <button type="submit" name="cari" class="btn btn-primary">Search</button>
           </form>
 
           <div class="text-end">
-            <a href="signup/register.php">
+            <a href="../sign/register.php">
               <button type="button" class="btn btn-danger">Log Out</button>
             </a>
           </div>

@@ -48,7 +48,8 @@ if (isset($_POST["submit"])) {
             <input type="hidden" name="id-mobil" value="<?= $mobil["id_mobil"] ?>">
           </div>
           <div class="mb-3 text-left">
-            <label for="gambar-mobil" class="form-label ">Gambar Mobil</label>
+            <label for="gambar-mobil" class="form-label ">Gambar Mobil</label><br>
+            <img src="../../mobil/<?= $mobil["gambar_mobil"] ?>" alt="" >
             <input type="file" name="gambar-mobil" value="<?= $mobil["gambar_mobil"] ?>" class="form-control" id="gambar-mobil" required>
           </div>
           <div class="mb-3">
