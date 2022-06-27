@@ -1,3 +1,4 @@
+
 <?php
 $servername = "localhost";
 $username = "root";
@@ -13,6 +14,7 @@ $conn = new mysqli($servername, $username, $password, $database);
 // } else {
 //     echo "Connection Succes!";
 // }
+
 function query ($conn, $query) {
     // global $conn;  
 
@@ -171,9 +173,9 @@ function upload() {
 
     //cek apakah gambar sudah di upload
         if($error === 4) {
-            echo "<script>";
-            echo "alert('Pilih Gambar terlebih dahulu!');";
-            echo "</script>";
+            echo '<div class="alert alert-danger" role="alert">
+                Pilih Gambar Terlebih Dahulu !
+              </div>';
             return false;
         }
 
@@ -186,17 +188,17 @@ function upload() {
 
     // cek apakah gambar yang di upload sudah sesuai
         if (!in_array($ekstensiGambar, $formatEkstensiValid)) {
-            echo "<script>";
-            echo "alert('Format tidak Sesuai!');";
-            echo "</script>";
+            echo '<div class="alert alert-danger" role="alert">
+                    Format Tidak Sesuai !, Pastikan memilih telah gambar.
+                  </div>';
             return false;
         }
 
     // cek apakah ukuran gambar terlalu besar
         if ($sizeFile > 1000000) {
-            echo "<script>";
-            echo "alert('Ukuran File Terlalu Besar!');";
-            echo "</script>";
+            echo '<div class="alert alert-danger" role="alert">
+                    Ukuran Gambar Terlalu Besar !
+                  </div>';
             return false;
         }
 
@@ -212,6 +214,79 @@ function upload() {
         return $namaFileGenerate;
 }
 
+
+function registrasi($data) {
+    global $conn;
+
+    $yourName = strtolower(stripslashes($data["your-name"]));
+    $yourEmail = strtolower(stripslashes($data["your-email"]));
+    $password = mysqli_real_escape_string($conn, $data["password"]);
+    $passwordConfirm = mysqli_real_escape_string($conn, $data["passwordConfirm"]);
+
+    // cek apakah username dan email sudah di isi 
+    $result = mysqli_query($conn, "SELECT your_name FROM tb_users WHERE your_name = '$yourName'");
+    if (mysqli_fetch_assoc($result)) {
+        echo '<div class="alert alert-danger" role="alert">
+                Username Sudah Tersedia !
+              </div>';
+        return false;
+    }
+
+    // cek apakah konfirmasi password sudah sesuai 
+    if( $password !== $passwordConfirm) {
+        echo '<div class="alert alert-danger" role="alert">
+                Password Tidak Sesuai !
+              </div>'; 
+        return false;
+    }   
+
+    // encrypsi password
+    $encrypsiPwd = password_hash($password, PASSWORD_DEFAULT);
+
+    // menghubungkan ke dataabase
+    mysqli_query($conn, "INSERT INTO tb_users VALUES ('', '$yourName', '$yourEmail', '$encrypsiPwd')");
+
+    return mysqli_affected_rows($conn);
+}
+
+function login($data) {
+    global $conn;
+}
+
+function cariCostumer($keyword) {
+    global $conn; 
+    $search = "SELECT * FROM tb_costumer WHERE  nama_costumer LIKE '%$keyword%' OR
+                                                alamat_costumer LIKE '%$keyword%' OR
+                                                nomer_telepon LIKE '%$keyword%' OR
+                                                jenis_kelamin LIKE '%$keyword%'
+              ";
+    return query($conn, $search);
+}
+
+function cariMobil($keyword) {
+    global $conn; 
+    $search = "SELECT * FROM tb_mobil WHERE     merek_mobil LIKE '%$keyword%' OR
+                                                harga_sewa_nama LIKE '%$keyword%' OR
+                                                harga_sewa_angka LIKE '%$keyword%' OR
+                                                mobil_sopir LIKE '%$keyword%' OR
+                                                bbm LIKE '%$keyword%' OR
+                                                jumblah_penumpang LIKE '%$keyword%' OR
+                                                plat_mobil LIKE '%$keyword%'
+              ";
+    return query($conn, $search);
+}
+
+function cariOrder($keyword) {
+    global $conn; 
+    $search = "SELECT * FROM tb_transaksi WHERE nama_costumer LIKE '%$keyword%' OR
+                                                merek_mobil LIKE '%$keyword%' OR
+                                                tanggal_awal_sewa LIKE '%$keyword%' OR
+                                                jangka_waktu_sewa LIKE '%$keyword%' OR
+                                                harga_sewa_perhari LIKE '%$keyword%' OR
+                                                total_bayar LIKE '%$keyword%' OR
+                                                status_sewa LIKE '%$keyword%'
+              ";
+    return query($conn, $search); 
+}
+
 ?>
-
-
