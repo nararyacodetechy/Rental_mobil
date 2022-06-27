@@ -5,10 +5,6 @@
 
 $merekMobil = query($conn, "SELECT * FROM tb_mobil"); 
 
-if(isset($_POST)) {
-
-}
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -36,7 +32,7 @@ if(isset($_POST)) {
                     <p class="penumpang"><?= $row["jumblah_penumpang"];?> Penumpang</p>
                     <p class="plat-mobil">Plat Mobil : <?= $row["plat_mobil"];?></p>
 
-                    <a href="tambah.php?id=<?= $row["id_mobil"] ?>" class="btn btn-primary">Sewa Sekarang</a>
+                    <a href="lanjut.php?id=<?= $row["id_mobil"] ?>" class="btn btn-primary">Sewa Sekarang</a>
                 </div>
             </div>
             <?php $id++ ?>

@@ -7,14 +7,14 @@ if (isset($_POST["submit"])) {
         echo "
             <script>
                 alert('Data Berhasil Ditambahkan!');
-                document.location.href = 'data-order.php';
+                document.location.href = 'index.php';
             </script>
         ";
     } else {
         echo "
             <script>
                 alert('Data Gagal Ditambahkan!');
-                document.location.href = 'data-order.php';
+                document.location.href = 'index.php';
             </script>
         ";
     }
@@ -42,6 +42,10 @@ if (isset($_POST["submit"])) {
         Form Order Mobil
         </div>
         <div class="card-body">
+        <div class="mb-3">
+            <label for="nama-costumer" class="form-label">Nama Costumer</label>
+            <input type="text" name="nama-costumer" class="form-control" id="nama-costumer" placeholder="Masukan Nama Costumer" required>
+          </div>
           <div class="mb-3">
             <label for="merek-mobil" class="form-label">Merek Mobil</label>
             <input type="text" name="merek-mobil" class="form-control" id="merek-mobil" placeholder="Masukan Merek Mobil" required>
@@ -58,11 +62,8 @@ if (isset($_POST["submit"])) {
             <label for="harga-sewa" class="form-label">Harga Sewa</label>
             <input type="text" name="harga-sewa" class="form-control" id="harga-sewa" placeholder="Masukan Harga Sewa dalam Jumblah Angka" required>
           </div>
-          <div class="mb-3">
-            <label for="total-bayar" class="form-label">Total Bayar</label>
-            <input type="text" name="total-bayar" class="form-control" id="total-bayar" placeholder="Masukan Jumblah total bayar" required>
-          </div>
-        </div>
+          
+        </div> 
         <div class="card-footer bg-dark mb-4"></div>
 
         <!-- button add & delete -->

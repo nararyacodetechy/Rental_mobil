@@ -3,7 +3,7 @@ require "../functions.php";
 
 $id = $_GET["id"];
 
-if (hapusOrder($id) > 0) {
+if (hapusOrder($id) > 0) { 
     echo "
         <script>
             document.location.href = 'data-order.php';

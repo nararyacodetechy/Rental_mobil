@@ -108,7 +108,7 @@
       <div class="px-3 py-2 bg-dark text-white">
         <div class="container">
           <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-            <a href="#" class="d-flex align-items-center my-2 my-lg-0 me-lg-auto text-white text-decoration-none">
+            <a href="../../public/index.php" class="d-flex align-items-center my-2 my-lg-0 me-lg-auto text-white text-decoration-none">
               <h3>Rencars</h3></svg>
             </a>
 
@@ -143,7 +143,7 @@
           </form>
 
           <div class="text-end">
-            <a href="../sign/register.php">
+            <a href="../sign-admin/login.php">
               <button type="button" class="btn btn-danger">Log Out</button>
             </a>
           </div>

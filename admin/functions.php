@@ -25,7 +25,6 @@ function query ($conn, $query) {
     return $rows;
 }
 
-
 function hapusCostumer($ids) {
     global $conn;
 
@@ -71,7 +70,7 @@ function tambahMobil ($data) {
     $gambarMobil = upload();
     if(!$gambarMobil) {
         return false;
-    }
+    } 
     $merekMobil = htmlspecialchars($data["merek-mobil"]);
     $hargaSewa = htmlspecialchars($data["harga-sewa"]);
     $hargaSewaNilai = htmlspecialchars($data["harga-sewa-nilai"]);
@@ -222,7 +221,7 @@ function registrasi($data) {
     $password = mysqli_real_escape_string($conn, $data["password"]);
     $passwordConfirm = mysqli_real_escape_string($conn, $data["passwordConfirm"]);
 
-    // cek apakah username dan email sudah di isi 
+    // cek apakah username dan email sudah tersedia
     $result = mysqli_query($conn, "SELECT your_name FROM tb_users WHERE your_name = '$yourName'");
     if (mysqli_fetch_assoc($result)) {
         echo '<div class="alert alert-danger" role="alert">
@@ -244,6 +243,40 @@ function registrasi($data) {
 
     // menghubungkan ke dataabase
     mysqli_query($conn, "INSERT INTO tb_users VALUES ('', '$yourName', '$yourEmail', '$encrypsiPwd')");
+
+    return mysqli_affected_rows($conn);
+}
+
+function registrasiAdmin($data) {
+    global $conn; 
+
+    $yourName = strtolower(stripslashes($data["your-name"]));
+    $yourEmail = strtolower(stripslashes($data["your-email"]));
+    $password = mysqli_real_escape_string($conn, $data["password"]);
+    $passwordConfirm = mysqli_real_escape_string($conn, $data["passwordConfirm"]);
+
+    // cek apakah username dan email sudah tersedia
+    $result = mysqli_query($conn, "SELECT name_admin FROM tb_admin WHERE name_admin = '$yourName'");
+    if (mysqli_fetch_assoc($result)) {
+        echo '<div class="alert alert-danger" role="alert">
+                Username Sudah Tersedia !
+              </div>';
+        return false;
+    }
+
+    // cek apakah konfirmasi password sudah sesuai 
+    if( $password !== $passwordConfirm) {
+        echo '<div class="alert alert-danger" role="alert">
+                Password Tidak Sesuai !
+              </div>'; 
+        return false;
+    }   
+
+    // encrypsi password
+    $encrypsiPwd = password_hash($password, PASSWORD_DEFAULT);
+
+    // menghubungkan ke dataabase
+    mysqli_query($conn, "INSERT INTO tb_admin VALUES ('', '$yourName', '$yourEmail', '$encrypsiPwd')");
 
     return mysqli_affected_rows($conn);
 }

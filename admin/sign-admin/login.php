@@ -6,15 +6,15 @@ if (isset($_POST["login"])) {
   $yourEmail = $_POST["your-email"];
   $password = $_POST["password"];
 
-  $result = mysqli_query($conn, "SELECT * FROM tb_users WHERE your_email = '$yourEmail'");
+  $result = mysqli_query($conn, "SELECT * FROM tb_admin WHERE your_email = '$yourEmail'");
 
   if (mysqli_num_rows($result) === 1) {
 
     //cek password 
     $row = mysqli_fetch_assoc($result);
-    if (password_verify($password, $row["pwd_user"])) {
+    if (password_verify($password, $row["password_admin"])) {
       // header("Location : ../tambah.php");
-      echo "<script>document.location.href = '../index.php';</script>";
+      echo "<script>document.location.href = '../costumer/data-costumer.php';</script>";
       exit;
     }
   }

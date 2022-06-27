@@ -1,0 +1,226 @@
+
+*{
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
+}
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Open Sans', sans-serif;
+}
+nav{
+    width: 100%;
+    margin: auto;
+    display: flex;
+    line-height: 80px;
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0;
+    background: #ffffff;
+    box-shadow: 0px 0px 10px 0px #364F6B;
+    z-index: 1;
+}
+.wrapper{
+    width: 1100px;
+    margin: auto;
+    position: relative;
+    height: 50px;
+}
+.logo{
+    font-size: 50px;
+    font-weight: bold;
+    float: left;
+    font-family: courier;
+    color: #364F6B;
+    
+}
+.menu{
+    position: relative;
+    float: right;
+}
+.menu ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+.menu ul li{
+    float: left;
+}
+.menu ul li a{
+    font-weight: bold;
+    text-align: center;
+    padding: 15px 15px 15px 15px;
+    
+}
+.menu ul li a:hover{
+    text-decoration: underline;
+}
+section{
+    margin: auto;
+    display: flex;
+    margin-bottom: 50px;
+}
+section#home img{
+    margin-top: 50px;
+    width: 60%;
+    height: 50%;
+}
+.kolom{
+    margin-top: 100px;
+    margin-bottom: 50px;
+    text-align: justify;
+    padding-right: 40px;
+    padding-left: 40px;
+}
+.kolom .deskripsi{
+    font-size: 20px;
+    font-weight: bold;
+    font-family: 'comic sans ms';
+    color: #364F6B;
+}
+h2{
+    font-family: 'comic sans ms';
+    font-weight: 800;
+    font-size: 45px;
+    margin-bottom: 20px;
+    color: #364F6B;
+    width: 100%;
+    line-height: 50px;   
+    text-align: left;
+}
+a.tbl-biru{
+    background: #3f72af;
+    border-radius: 20px;
+    padding: 15px 20px 15px 20px;
+    cursor: pointer;
+    font-weight: bold;
+    color: #ffffff;
+}
+a.tbl-biru:hover{
+    text-decoration: none;
+    background: #fc5185;
+    color: #ffffff;
+}
+a.tbl-pink{
+    background: #fc5185;
+    border-radius: 20px;
+    padding: 15px 20px 15px 20px;
+    color: #ffffff;
+    cursor: pointer;
+    font-weight: bold;
+}
+a.tbl-pink:hover{
+    background: #3f72af;
+}
+p{
+    margin: 10px 0px 10px 0px;
+    padding: 10px 0px 10px 0px;
+    line-height: 24px;
+}
+section#courses img{
+    width: 50%;
+    height: 50%;
+    margin-top: 50px;
+}
+section#tutors{
+    text-align: center;
+    margin: 20px 10px 0px 10px;
+}
+p.tema{
+    font-size: 20px;
+    font-weight: bold;
+    font-family: 'comic sans ms';
+    color: #364F6B;
+}
+h2.tutors{
+    text-align: center;
+}
+div.tengah{
+    width: 100%;
+    margin-top: 60px;
+}
+p.deskripsitutors{
+    text-align: justify;
+    line-height: 24px;
+}
+.tutors-list{
+    width: 100%;
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+}
+.kartu-tutor{
+    width: 20%;
+    margin: 20px 32px 20px 32px;
+}
+.kartu-tutor img{
+    height: 100px;
+    width: 100px;
+    font-family: 'comic sans ms';
+    font-family: 800;
+    font-size: 25px;
+    text-align: center;
+    color: #364F6B;
+    border-radius: 50%;
+}
+.kartu-tutor img.narendra-wicaksono{
+    height: 210px;
+}
+.kartu-tutor img.ahmad-zacky{
+    height: 210px;
+}
+.partner-list img{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    padding: 20px 55px 20px 55px;
+}
+.kolom p{
+    text-align: center;
+}
+.kolom h2{
+    text-align: center;
+}
+#contact{
+    color: #fff;
+    height: 400px;
+    background-color: #364F6B;
+}
+.footer{
+    width: 100%;
+    position: relative;
+    display: flex;
+    margin: auto;
+    float: left;
+    padding: 50px 50px 50px 50px;
+}
+.footer h3{
+    text-align: center;
+}
+div.footer-section{
+    margin: 30px;
+    text-align: justify;
+    font-size: 20px;
+}
+div.footer-about{
+    margin: 30px;
+    text-align: justify;
+    font-size: 20px;
+}
+div.footer-contact{
+    margin: 30px;
+    text-align: justify;
+    font-size: 20px;
+}
+div.footer-social{
+    margin: 30px;
+    text-align: justify;
+    font-size: 20px;
+}
+div.wrapper{
+    text-align: center;
+    width: 1100px;
+    margin-bottom: 30px;
+}

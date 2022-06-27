@@ -1,15 +1,15 @@
 <?php require "../header.php"; ?>
 
 <!-- Menampilkan Data (SELECT.PHP) -->
-<?php require "../functions.php"; 
+<?php require "../functions.php";
 
-$costumer = query($conn, "SELECT * FROM tb_costumer"); 
+$costumer = query($conn, "SELECT * FROM tb_costumer");
 
-if(isset($_POST)) {
-
+if (isset($_POST)) {
+  
 }
 
-if(isset($_POST["cari"])) {
+if (isset($_POST["cari"])) {
   $costumer = cariCostumer($_POST["keyword"]);
 }
 
@@ -17,12 +17,14 @@ if(isset($_POST["cari"])) {
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Halaman Admin</title>
 </head>
+
 <body>
   <!-- awal-container  -->
   <div class="container">
@@ -43,27 +45,31 @@ if(isset($_POST["cari"])) {
             <th>Alamat Costumer</th>
             <th>Nomer Telepon</th>
             <th>Jenis Kelamin</th>
-            <th style="width: 160px;">Aksi</th>
+            <th>Aksi</th>
           </tr>
 
           <?php $id = 1; ?>
           <?php foreach ($costumer as $row) : ?>
-          <tr>
-            <td><?= $id ?></td>
-            <td><?= $row["nama_costumer"];?></td>
-            <td><?= $row["alamat_costumer"];?></td>
-            <td><?= $row["nomer_telepon"];?></td>
-            <td><?= $row["jenis_kelamin"];?></td>
-            <td class="text-center">
-              <a href="edit-costumer.php?id=<?= $row["id_costumer"];?>" class="btn btn-warning">Edit</a>
-              <a>
-                <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-                Delete
-                </button>
-              </a>
-            </td>
-          </tr>
-          <?php $id++ ?>
+            <tr>
+              <td><?= $id ?></td>
+              <td><?= $row["nama_costumer"]; ?></td>
+              <td><?= $row["alamat_costumer"]; ?></td>
+              <td><?= $row["nomer_telepon"]; ?></td>
+              <td><?= $row["jenis_kelamin"]; ?></td>
+
+              <!-- tombol edit dan delete -->
+              <td class="text-center">
+                <a href="edit-costumer.php?id=<?= $row["id_costumer"]; ?>" class="btn btn-warning">Edit</a>
+
+                <a>
+                  <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                    Delete
+                  </button>
+                </a>
+              </td>
+
+            </tr>
+            <?php $id++ ?>
           <?php endforeach; ?>
         </table>
       </div>
@@ -84,12 +90,13 @@ if(isset($_POST["cari"])) {
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
-          <a href="hapus-costumer.php?id=<?= $row["id_costumer"];?>">
-            <button type="submit" class="btn btn-danger">Hapus</button>
+          <a href="hapus-costumer.php?id=<?= $row["id_costumer"]; ?>">
+            <button type="submit" class="btn btn-danger">Hapus</button> 
           </a>
         </div>
       </div>
     </div>
   </div>
 </body>
+
 </html>
